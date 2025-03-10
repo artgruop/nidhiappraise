@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="shortcut icon" type="shortcuticon" href="image/logg.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <title>Art Leasing - Gold appraising</title>
+</head> 
+
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="brandname">
+                <h2><img src="image/art_logot.png" alt="">CHENGANNUR NIDHI</h2> 
+            </div>
+            <div class="dropdown">           
+                <div class="dropdown">           
+                    <button class="dropbtn"><a href="home.html"><img src="image/home-button.png" alt="">Home</a></button>                    
+                </div>
+            </div>
+            <div class="right_info">
+                <div class="user_info">
+                    <label for="branchName">
+                        <img src="image/user (2).png" alt="User Icon">
+                    </label>                    
+                    <button class="logout">
+                        <p name="userName" id="userName"></p>
+                    </button>
+                    <div class="userdropdown-content">
+                        <a href="#"> <img src="image/user (2).png" alt="User Icon"> Profile</a>
+                        <a href="Login.html"> <img src="image/switch copy.png" alt="User Icon"> Logout</a>
+                    </div>
+                </div>
+            </div>
+                </div>                    
+            </div>				
+        </div>
+    </div>
+        <div class="content">
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>Appraising Form</h2> 
+                        <div id="messageContainer"></div>     
+                    </div>
+
+                    <div class="info_fields">
+                        <div class="form-fields">
+                            <!-- Date Field -->
+                            <div class="input-box">
+                                <input type="hidden" id="id" />                                
+                                <label for="data">Date</label>      
+                                <p id="mainDate" class="form-display"></p>
+                                <input type="hidden" name="mainDate" id="hiddenmainDate" />
+                            </div>
+                    
+                            <!-- Branch Field -->
+                            <div class="input-box">
+                                <label for="brName">Branch</label>
+                                <p id="branch" class="form-display"></p>
+                                <input type="hidden" name="branch" id="hiddenbranch" />
+                            </div> 
+                    
+                            <!-- Staff Name Fields -->
+                            <div class="info_fields_staff">
+                                <div class="input-box">
+                                    <label for="staff-name">Staff Name</label>
+                    
+                                    <p id="brmgr" class="form-display"></p>
+                                    <input type="hidden" name="brmgr" id="hiddenbrmgr" />
+                    
+                                    <p id="stff1" class="form-display"></p>
+                                    <input type="hidden" name="stff1" id="hiddenstff1" />
+                    
+                                    <p id="stff2" class="form-display"></p>
+                                    <input type="hidden" name="stff2" id="hiddenstff2" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="wrapper" id="data_form">
+                        <form action="#" id="mainappraisForm">                          
+                            <div class="main_form-fields">
+                                <div class="input-box">                                                                           
+                                   <label for="Pledge">Pledge Number</label>
+                                    <input type="number" placeholder="Pledge Number" id="Pledge" required autocomplete="off">
+                                </div>
+                                <div class="input-box">
+                                    <label for="gl-wgt">Gold Weight</label>
+                                    <input type="number" placeholder="Gold Weight" id="glwgt" required autocomplete="off" min="0" step="0.001">
+                                </div> 
+
+                                <div class="input-box">
+                                    <label for="stn-wgt">Stone/Plastic Weight</label>
+                                    <input type="number" placeholder="Stone/Plastic Weight" id="stnwgt"  autocomplete="off" min="0" step="0.001">
+                                </div>  
+
+                                <div class="input-box">
+                                    <label for="net-wgt">Net Weight</label>
+                                    <input type="number" placeholder="Net Weight" id="netwgt" required autocomplete="off" min="0" step="0.001">
+                                </div> 
+
+                                <div class="input-box">
+                                    <label for="lon-amt">Loan Amount</label>
+                                    <input type="number" placeholder="Loan Amount" id="lonamt" required autocomplete="off" min="0" step="0.001">
+                                </div>
+
+                                <div class="input-box">
+                                    <label for="remark">Remarks</label>
+                                    <input type="text" placeholder="If any remarks...." id="remark"  autocomplete="off">
+                                </div>
+                                
+                            <div class="btn-save-data">                                
+                                <button type="reset" class="clear">Clear</button>
+                                <button type="submit" class="save">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+          
+
+
+                </div>
+                <div class="new-students">
+                    <div class="title">
+                        <h2>Appraise Report</h2>
+                    </div>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pledge<br> Number</th>
+                                    <th>Gold Weight</th>
+                                    <th>Stone/plastic<br>Weight</th>
+                                    <th>Net Weight</th>
+                                    <th>Loan Amount</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Data will be inserted dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+<script type="module" src="js/dash.js"></script>
+<script>
+    (function () {
+window.history.pushState(null, null, document.URL);
+window.addEventListener("popstate", function () {
+    window.history.pushState(null, null, document.URL);
+});
+})();
+</script>
+</body>
+</html>

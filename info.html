@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="shortcut icon" type="shortcuticon" href="image/logg.png">
+    <link rel="stylesheet" href="css/info.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Chengannur Nidhi-Gold appraising</title> 
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="brandname">
+                <h2><img src="image/art_logot.png" alt="">CHENGANNUR NIDHI</h2> 
+            </div>
+            <div class="dropdown">           
+                <div class="dropdown">           
+                    <button class="dropbtn"><a href="info.html"><img src="image/home-button.png" alt="">Home</a></button>                    
+                </div>
+            </div>
+            <div class="right_info">
+                <div class="user_info">
+                    <label for="branchName">
+                        <img src="image/user (2).png" alt="User Icon">
+                    </label>                    
+                    <button class="logout">
+                        <p name="userName" id="userName"></p>
+                    </button>
+                    <div class="userdropdown-content">
+                        <a href="#"> <img src="image/user (2).png" alt="User Icon"> Profile</a>                                         
+                        <a href="Login.html"> <img src="image/switch copy.png" alt="User Icon"> Logout</a>
+                    </div>
+                </div>
+            </div>
+                </div>                    
+            </div>				
+        </div>
+    </div>
+        <div class="content">
+                    <div class="content-2">
+                        <div class="recent-payments">
+                            <div class="title">
+                                <h2>Branch Info</h2>                                                     
+                            </div>
+                            <div class="wrapper" id="dataform">
+                                <form action="#" id="appraisForm">                          
+                                    <div class="form-fields">
+                                        <div class="input-box">                                              
+                                        <label for="mainDate">Date</label>
+                                        <p type="date" id="mainDate"></p>
+                                        <input type="hidden" id="hiddenmainDate">
+                                    </div>
+                                    <div class="input-box">
+                                        <label for="brName">Branch</label>
+                                        <select id="brName" required ></select>
+                                    </div> 
+                                        <div class="info_fields_staff">
+                                        <div class="input-box">
+                                            <label for="staff-name">Staff Name</label>
+                                            <input type="text" placeholder="Branch Manager" id="staff1" required autocomplete="off" >
+                                            <input type="text" placeholder="Accounts Clerk" id="staff2" required autocomplete="off" >
+                                            <input type="text" placeholder="Accounts Clerk" id="staff3" autocomplete="off" >
+                                        </div>
+                                    </div> 
+                                    <div class="btn-save-data">
+                                        <button type="reset" class="clear"><u>Cancel</u></button>
+                                        <button type="submit" class="save">Next</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<script type="module" src="js/info.js"></script>
+<script>
+    (function () {
+window.history.pushState(null, null, document.URL);
+window.addEventListener("popstate", function () {
+    window.history.pushState(null, null, document.URL);
+});
+})();
+</script>
+</body>
+</html>

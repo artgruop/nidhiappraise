@@ -1,0 +1,200 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    text-align: center;
+    padding: 7px;
+    border-bottom: 1px solid #ddd;
+    border-right:1px solid #c0bfbf;
+}
+th {
+    font-size: 12px;
+    background: #07229b;
+    color: white;
+}
+td {
+    font-size: 13px;
+}
+::placeholder{
+    text-transform: capitalize;
+    font-size: 11px;
+    color: #00000093;
+}
+.content {
+    position: relative;
+    margin-top: 9vh;
+    padding: 5px;
+    padding-bottom:0px;
+    background: #cac9c9;
+}
+.content .content-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+ .content .content-2 .recent-payments {
+    flex: 1;
+    min-height: 80vh;
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+.new-students {
+    flex: 2;
+    min-height: 80vh;
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+.new-students .title h2 {
+    position: sticky;    
+    background: white;
+    padding: 1px ;
+    z-index: 2;
+    text-align: center;    
+}
+.table-container {
+    overflow-y: auto;
+    max-height: 66vh;
+}
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-container thead {
+    position: sticky;
+    top: 0px;
+    background: white;
+    z-index: 0;
+}
+.table-container tbody tr:nth-child(even) {
+    background: #e8eaf7d7;
+}
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-bottom: 2px solid #999;
+}
+.title h2 {
+    font-size: 14px;    
+}
+.form-fields, 
+.main_form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 9px;
+    padding: 7px;
+}
+.main_form-fields{
+    padding-top: 6px;
+}
+.main_form-fields .input-box {
+    width: 48%;   
+}
+.form-fields .input-box{
+    width: 48%;
+}
+.info_fields_staff {
+    width: 100%;         
+}
+.info_fields_staff .input-box P{
+    margin: 5px;
+}
+.content label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 0px;
+}
+.input-box input{
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #e9e8e8;
+    color: #333;
+}
+.input-box p.form-display {
+    width: 100%;   
+    min-height: 28px;     
+    background: #f1f1f1;
+    color: #333;    
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.btn-save-data {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 220px;
+}
+.btn-save-data button  { 
+    color: white;
+    border-radius: 2px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-save-data .save{
+    padding: 9px 40px;
+    background-color: #0879ad;
+}
+.btn-save-data .clear {
+    padding: 4px 9px;
+    background-color: #a70808;
+}
+.btn-save-data .save:hover {
+    transform: scale(1.1)
+}
+.btn-save-data .clear:hover {
+    transform: scale(1.1)
+}
+@media screen and (max-width: 768px) {
+    .form-fields {
+        flex-direction: column;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    .btn-save-data {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-save-data .save,
+    .btn-save-data .clear {
+        width: 80%;
+        text-align: center;
+    }
+}

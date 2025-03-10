@@ -1,0 +1,166 @@
+input {
+    text-transform: capitalize;
+}
+::placeholder {
+    text-transform: capitalize;
+}
+.content {
+    position: relative;
+    margin-top: 10vh;
+    padding: 20px;
+    background: #cac9c9;
+}
+.content .content-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.content .content-2 .recent-payments {
+    min-height: 50vh;
+    width: 60%;
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-bottom: 2px solid #999;
+}
+.title h2 {
+    font-size: 16px;
+}
+.form-fields {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+.form-fields .info_fields_staff{
+    padding-top: 25px;
+}
+.info_fields_staff .input-box input{
+    margin-top: 5px;   
+}
+.input-box {
+    width: 50%;
+    margin-bottom: 15px;
+}
+.input-box input,
+.input-box select,
+.input-box p {
+    width: 99%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.btn-save-data {
+    display: flex;    
+    margin-top: 25px;
+    margin-left: 8px;    
+    height: 35px;
+}
+.btn-save-data .save {
+    background-color: #0095ff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;    
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+    margin-left: 475%;  
+}
+.btn-save-data .clear {    
+    padding: 0px;
+    font-weight: bold;
+    background: none;    
+    color: rgb(184, 6, 6);    
+    border: none;
+    cursor: pointer;    
+}
+.btn-save-data .save:hover,
+.btn-save-data .save:focus {
+  background-color: #07c;
+}
+.btn-save-data .save:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+.btn-save-data .save:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+.btn-save-data .clear:hover,
+.btn-save-data .clear:focus {    
+    color: rgb(160, 7, 7);
+    transform: scale(1.1);
+}
+@media screen and (max-width: 768px) {
+    .container .header {
+        padding: 10px;
+    }
+
+    .search input {
+        width: 80%;
+    }
+
+    .right_info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .user_info {
+        padding: 6px 15px;
+    }
+
+    .icon_wrap {
+        padding: 5px 8px;
+    }
+
+    .status_head {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .btn-order .order {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .form-fields {
+        flex-direction: column;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    .btn-save-data {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-save-data .save,
+    .btn-save-data .clear {
+        width: 80%;
+    }
+}
