@@ -97,8 +97,7 @@ function fetchData() {
                             <td>${currentUserValue.stnwgt || "-"}</td> 
                             <td>${currentUserValue.netwgt || "-"}</td>
                             <td>${currentUserValue.lonamt || "-"}</td>
-                            <td>${currentUserValue.remark || "-"}</td>
-                            <td class="no-print">${formattedDate} ${formattedTime}</td> <!-- Add class --> 
+                            <td>${currentUserValue.remark || "-"}</td>                            
                         </tr>
                     `;
                 });
