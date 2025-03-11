@@ -21,24 +21,40 @@ document.addEventListener("DOMContentLoaded", () => {
   // db
   import { database, ref, onValue } from "./firebaseConfig.js";
 
-  const collectionListDB = ref(database, `stickerdb`);
+ const collectionListDB = ref(database, `stickerdb`);
   const tblBodyEl = document.querySelector("#tableBody");
+  const filterNmeEl = document.querySelector("#workuser");
+  function fetchData() {
+      onValue(collectionListDB, (snapshot) => {
+          if (snapshot.exists()) {
+              let userArray = Object.entries(snapshot.val());
+              const workuser = filterNmeEl.value.trim().toLowerCase(); 
   
-  // Fetch Data
-  onValue(collectionListDB, (snapshot) => {
-      if (snapshot.exists()) {
-          let userArray = Object.entries(snapshot.val());
-          const rows = userArray.map(([id, currentUserValue]) => `
-              <tr>
-                  <td>${currentUserValue.hiddenmainDate || "-"}</td> 
-                  <td style="width: 50%;">${currentUserValue.hiddenbranch || "-"}</td> 
-                  <td>${currentUserValue.usedstic || "-"}</td>                    
-              </tr>
-          `).join("");
+              const filteredRows = userArray
+                  .filter(([id, currentUserValue]) => {                      
+                      return workuser === "all" || 
+                             (currentUserValue.user?.toLowerCase() === workuser);
+                  })
+                  .map(([id, currentUserValue]) => {
+                      let formattedDate = formatDate(currentUserValue.hiddenmainDate);
+                      return `
+                          <tr>
+                              <td>${formattedDate || "-"}</td> 
+                              <td style="width: 50%;">${currentUserValue.hiddenbranch || "-"}</td> 
+                              <td>${currentUserValue.usedstic || "-"}</td>                    
+                          </tr>
+                      `;
+                  })
+                  .join("");
+              tblBodyEl.innerHTML = filteredRows || "<tr><td colspan='3'>No Records Found</td></tr>";
+          } else {
+              tblBodyEl.innerHTML = "<tr><td colspan='3'>No Records Found</td></tr>";
+          }
+      });
+  }
   
-          tblBodyEl.innerHTML = rows;
-      } else {
-          tblBodyEl.innerHTML = "<tr><td colspan='6'>No Records Found</td></tr>";
-      }
-  });
+ 
+  filterNmeEl.addEventListener("change", fetchData);
   
+
+  fetchData();
