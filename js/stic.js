@@ -66,7 +66,7 @@ import { database, ref, push, onValue } from "./firebaseConfig.js";
   const userEl = document.querySelector('#hiddenuserName');
 
   const totalStickerEl = document.getElementById("totalSticker"); // Total for `totlsick`
-  const totalReceivedEl = document.getElementById("totalReceived"); // Total for `recevd`
+  const totalReceivedEl = document.getElementById("totalReceived"); // Total for `received`
   const balanceEl = document.getElementById("balance")
 
   function updateBalance() {
@@ -107,7 +107,7 @@ import { database, ref, push, onValue } from "./firebaseConfig.js";
 
         userArray.forEach(([id, currentUserValue]) => {
             let totlsickValue = parseInt(currentUserValue.totlsick) || 0;
-            let recevdValue = parseInt(currentUserValue.recevd) || 0;
+            let recevdValue = parseInt(currentUserValue.received) || 0;
 
             totalSick += totlsickValue;
             totalReceived += recevdValue;
