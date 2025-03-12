@@ -106,6 +106,7 @@ import { database, ref, push, onValue } from "./firebaseConfig.js";
         let totalReceived = 0;
 
         userArray.forEach(([id, currentUserValue]) => {
+            let formattedDate = formatDate(currentUserValue.hiddenmainDate);
             let totlsickValue = parseInt(currentUserValue.totlsick) || 0;
             let recevdValue = parseInt(currentUserValue.received) || 0;
 
@@ -114,6 +115,7 @@ import { database, ref, push, onValue } from "./firebaseConfig.js";
 
             tblBodyEl.innerHTML += `
                 <tr>
+                     <td>${formattedDate || "-"}</td> 
                     <td>${currentUserValue.hiddenmainDate || "-"}</td> 
                     <td>${currentUserValue.hiddenbranch || "-"}</td> 
                     <td>${currentUserValue.usedstic || "-"}</td>
