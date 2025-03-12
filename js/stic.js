@@ -115,8 +115,7 @@ import { database, ref, push, onValue } from "./firebaseConfig.js";
 
             tblBodyEl.innerHTML += `
                 <tr>
-                     <td>${formattedDate || "-"}</td> 
-                    <td>${currentUserValue.hiddenmainDate || "-"}</td> 
+                     <td>${formattedDate || "-"}</td>                    
                     <td>${currentUserValue.hiddenbranch || "-"}</td> 
                     <td>${currentUserValue.usedstic || "-"}</td>
                     <td>${currentUserValue.damaged || "-"}</td>
