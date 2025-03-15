@@ -9,57 +9,84 @@
     <title>Chengannur Nidhi-Gold appraising</title>
 </head>
 <body>
-    <div class="login-container">
+      <div class="login-container">
             <div class="title_lg">
             <h1>Login</h1> 
             <p>Use your username password</p>
-        </div>
-            <div class="login_form">       
-        <form id="loginForm">
+        </div>       
+ <div class="login_form">  
+            <!-- Error message container -->
+            <div id="error-message" style="color: red; text-align: center; margin-bottom: 10px; font-size: 11px;"></div>
+
+            <form id="loginForm">
             <input type="text" placeholder="User Name" id="username" name="username" autocomplete="off" required>
             <input type="password" placeholder="Password" id="password" name="password" autocomplete="off" required>
             <input type="submit" value="Login">
         </form>
     </div>
 </div>
+
     <script>
-        //  users data   
-        document.getElementById('loginForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); 
+       document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent form submission
+
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
+    const errorMessage = document.getElementById('error-message'); // Error message container
+    errorMessage.innerHTML = ""; // Clear previous messages
+
+    // Get current date and time
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    // Define login time range (9:30 AM to 5:45 PM)
+    const startHour = 9, startMinute = 30;
+    const endHour = 17, endMinute = 45;
+
+    // Block login on Sundays
+    if (day === 0) {
+        errorMessage.innerHTML = "Login is not allowed";
+        return;
+    }
+    // Check if the current time is within the allowed login window
+    if (
+        (hours < startHour || (hours === startHour && minutes < startMinute)) || 
+        (hours > endHour || (hours === endHour && minutes > endMinute))
+    ) {
+        errorMessage.innerHTML = "Login is not allowed";
+        return;
+    }
+
     try {
+        // Fetch user data from JSON file
         const response = await fetch('resources/username.json');
-        
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        const users = await response.json();        
+        const users = await response.json();
+        // Matching user
         const user = users.find(user => user.username === username && user.password === password);
         if (user) {
             try {
+                // Store branch info
                 localStorage.setItem('userName', user.branch);
-                window.location.href = 'info.html';
+
+                // Redirect to collection page
+                window.location.href = 'home.html';
             } catch (error) {
                 console.error("Failed to save branch info in localStorage:", error);
-                alert("An error occurred while logging in. Please try again.");
+                errorMessage.innerHTML = "An error occurred while logging in. Please try again.";
             }
         } else {
-            alert('Invalid username or password');
+            errorMessage.innerHTML = "Invalid username or password.";
         }
     } catch (error) {
         console.error("Error fetching or processing user data:", error);
-        alert("An error occurred while logging in. Please try again.");
+        errorMessage.innerHTML = "An error occurred while logging in. Please try again.";
     }
 });
-(function () {
-    window.history.pushState(null, null, document.URL);
-    window.addEventListener("popstate", function () {
-        window.history.pushState(null, null, document.URL);
-    });
-})();
-localStorage.clear();
     </script>
-    
 </body>
 </html>
