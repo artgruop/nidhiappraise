@@ -84,6 +84,7 @@ import { database, ref, push, onValue } from "./firebaseConfig.js";
           damaged: damagedEL.value,
           totlsick: totaldEL.value, 
           user: userEl.value,
+           dateTime: getCurrentDateTime()  
       };
   const messageContainer = document.getElementById("messageContainer");
   push(collectionListDB, collect)
