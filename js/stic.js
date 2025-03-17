@@ -54,6 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // db
 import { database, ref, push, onValue } from "./firebaseConfig.js";
 
+function getCurrentDateTime() {
+    const now = new Date();
+    const formattedDate = now.toISOString().split("T")[0]; 
+    const formattedTime = now.toLocaleTimeString();
+    return `${formattedDate} ${formattedTime}`;
+}
 
   const collectionListDB = ref(database, `stickerdb`);
   const mainappraisForm = document.getElementById("stickerForm");
