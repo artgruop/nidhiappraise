@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const hiddenBranchEl = document.getElementById('hiddenbranch');
           if (hiddenBranchEl) hiddenBranchEl.value = branchName;
       } else {          
-          window.location.href = 'info.html';
+          window.location.href = './info';
       }
 });  
 //branch name
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('userName').textContent = branchName;
         document.getElementById('hiddenuserName').value = branchName;        
       } else {  
-        window.location.href = 'login.html';
+        window.location.href = './';
       }      
 });
 

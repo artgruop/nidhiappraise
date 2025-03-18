@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const hiddenStaff2El = document.getElementById('hiddenstff2');
       if (hiddenStaff2El) hiddenStaff2El.value = staff3;
   } else {        
-      window.location.href = 'info.html';
+      window.location.href = './info';
   }
 });
     //branch name---------------------------------------
@@ -55,6 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         
       } else {
         // Redirect back to login if no branch name found
-        window.location.href = 'login.html';
+        window.location.href = './';
       }
     });

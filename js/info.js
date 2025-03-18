@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('userName').textContent = branchName;
       document.getElementById('hiddenuserName').value = branchName;
     } else {
-      window.location.href = 'login.html';
+      window.location.href = './';
     }
   });
 //branch name droplist
@@ -66,7 +66,7 @@ document.getElementById('appraisForm').addEventListener('submit', function(event
           localStorage.setItem('staff3', staff3);
       }
 
-      window.location.href = 'home.html';
+      window.location.href = './home';
   } catch (error) {
       console.error("Failed to save branch info in localStorage:", error);
       alert("Failed to save data. Please try again.");

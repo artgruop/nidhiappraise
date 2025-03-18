@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const hiddenStaff2El = document.getElementById('hiddenstff2');
         if (hiddenStaff2El) hiddenStaff2El.value = staff3;
     } else {        
-        window.location.href = 'info.html';
+        window.location.href = './info';
     }
 });
 //user name---------------------------------------
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById('userName').textContent = branchName;
       document.getElementById('hiddenuserName').value = branchName;      
     } else {
-      window.location.href = 'login.html';
+      window.location.href = './';
     }
   });
   
