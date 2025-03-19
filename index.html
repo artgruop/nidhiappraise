@@ -74,7 +74,7 @@
                 localStorage.setItem('userName', user.branch);
 
                 // Redirect to collection page
-                window.location.href = './home';
+                window.location.href = './info';
             } catch (error) {
                 console.error("Failed to save branch info in localStorage:", error);
                 errorMessage.innerHTML = "An error occurred while logging in. Please try again.";
